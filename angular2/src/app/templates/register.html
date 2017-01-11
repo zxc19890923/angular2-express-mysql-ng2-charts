@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1"
+         style="top: 50%; position: absolute; margin-top: -200px">
+      <div class="well">
+        <h4 class="text-center">注册</h4>
+        <form #registerForm="ngForm" name="form">
+          <div class="form-group">
+            <p>
+              <input type="text" name="username" class="form-control" [(ngModel)]="username" required
+                     placeholder="用户名"/>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>
+              <input type="text" name="email" class="form-control" [(ngModel)]="email" required placeholder="邮箱"/>
+            </p>
+          </div>
+          <div class="from-group">
+            <p>
+              <input type="password" name="password" class="form-control" [(ngModel)]="password" required
+                     placeholder="密码"/>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>
+              <input type="password" name="sure_password" class="form-control" [(ngModel)]="sure_password" required
+                     placeholder="确认密码"/>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>
+              <input type="text" name="address" class="form-control" [(ngModel)]="address" placeholder="地址"/>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>
+              <select name="position" [(ngModel)]="position" class="form-control">
+                <option value="web前端开发工程师">web前端开发工程师</option>
+                <option value="php">php</option>
+                <option value="ios">ios</option>
+                <option value="android">android</option>
+              </select>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>
+              <a routerLink="/login">登录</a>
+              <button (click)="registerHandel()" class="btn btn-primary pull-right"
+                      [disabled]="!registerForm.form.valid">注册
+              </button>
+            </p>
+          </div>
+          <p class="text-danger">
+            {{message}}
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
